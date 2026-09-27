@@ -56,7 +56,6 @@ export default function HomePage() {
   };
 
   const handleHeaderBook = () => {
-    // Open booking on the first template or scroll to templates
     setSelectedTemplate(TEMPLATES[0]);
     setModalMode('book');
     setIsModalOpen(true);
@@ -68,116 +67,116 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#0a0e17] text-slate-100 overflow-x-hidden selection:bg-indigo-600 selection:text-white">
-      {/* SECTION 1: MODERN GLASSMORPHISM HEADER */}
+    <div className="relative min-h-screen bg-white text-zinc-950 overflow-x-hidden selection:bg-blue-600 selection:text-white">
+      {/* SECTION 1: MODERN GLASSMORPHISM HEADER (60% White / 30% Black Structure) */}
       <Header onBookClick={handleHeaderBook} />
 
       <main className="relative">
         {/* SECTION 2: HERO SECTION WITH AMBIENT GLOW */}
-        <section className="relative pt-20 pb-20 sm:pt-28 sm:pb-28 overflow-hidden">
+        <section className="relative pt-20 pb-20 sm:pt-28 sm:pb-28 overflow-hidden bg-white">
           <HeroAmbientGlow />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            {/* Top Escrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-medium mb-6 shadow-lg shadow-indigo-500/5">
-              <Zap className="w-4 h-4 text-indigo-400" />
+            {/* Top Escrow Badge (5% RED URGENCY ACCENT - #dc2626) */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
+              <Zap className="w-4 h-4 text-red-600" />
               <span>48-Hour Live Deployment • 10% Escrow Token Model</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-tight">
+            {/* Main Headline (30% Black Primary Typography + 5% Blue Highlight) */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-950 max-w-4xl mx-auto leading-tight sm:leading-tight">
               Ready-Made Websites, Deployed to Your Domain in{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-indigo-300 to-blue-400">
+              <span className="text-blue-600">
                 48 Hours.
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-sm sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
               Browse high-converting production websites. Reserve instantly with just a 10% token deposit. We handle your domain, hosting, and launch.
             </p>
 
-            {/* Dual CTAs */}
+            {/* Dual CTAs (30% Solid Black CTA + Clean White Outline) */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
               <button
                 onClick={() => scrollTo('templates')}
-                className="w-full sm:w-auto min-h-[46px] px-7 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 hover:from-indigo-500 hover:to-blue-500 shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto min-h-[46px] px-7 py-3 rounded-full text-sm font-semibold text-white bg-black hover:bg-zinc-800 shadow-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98] cursor-pointer"
               >
                 <span>Explore Templates</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-blue-400" />
               </button>
 
               <button
                 onClick={() => scrollTo('how-it-works')}
-                className="w-full sm:w-auto min-h-[46px] px-6 py-3 rounded-full text-sm font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto min-h-[46px] px-6 py-3 rounded-full text-sm font-semibold text-zinc-800 hover:text-black bg-white hover:bg-zinc-50 border border-zinc-200 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <span>How 10% Token Works</span>
               </button>
             </div>
 
             {/* Live Stats Pill Row */}
-            <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-400">
+            <div className="mt-12 pt-8 border-t border-zinc-100 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-zinc-600">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-indigo-400" />
-                <span className="text-slate-200 font-medium">48h SLA Handover</span>
+                <Clock className="w-4 h-4 text-red-600" />
+                <span className="text-zinc-900 font-semibold">48h SLA Handover</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-indigo-400" />
-                <span className="text-slate-200 font-medium">100% Escrow Protected</span>
+                <ShieldCheck className="w-4 h-4 text-blue-600" />
+                <span className="text-zinc-900 font-semibold">100% Escrow Protected</span>
               </div>
               <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-indigo-400" />
-                <span className="text-slate-200 font-medium">Free SSL & Domain Setup</span>
+                <Globe className="w-4 h-4 text-blue-600" />
+                <span className="text-zinc-900 font-semibold">Free SSL & Domain Setup</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* SECTION 3: HOW IT WORKS (THE CLEAR 3-STEP JOURNEY) */}
-        <section id="how-it-works" className="py-16 sm:py-24 bg-[#080c14] border-y border-white/5">
+        <section id="how-it-works" className="py-16 sm:py-24 bg-zinc-50 border-y border-zinc-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-              <span className="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-blue-600 font-semibold">
                 Transparent 3-Step Process
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950">
                 How the 10% Token Launch Works
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400">
+              <p className="text-xs sm:text-sm text-zinc-600">
                 Zero full payments upfront. Lock your template and inspect the live build before releasing the balance.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Step 1 */}
-              <div className="bg-[#0f172a] rounded-2xl p-6 sm:p-7 border border-white/5 relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
-                <div className="text-3xl font-extrabold font-mono text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors mb-4">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-zinc-200 relative overflow-hidden group hover:border-zinc-300 transition-colors shadow-sm">
+                <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-blue-600 transition-colors mb-4">
                   01
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Browse & Select</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-zinc-950 mb-2">Browse & Select</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Pick a pre-built, production-tested website tailored to your business from our curated catalog.
                 </p>
               </div>
 
               {/* Step 2 */}
-              <div className="bg-[#0f172a] rounded-2xl p-6 sm:p-7 border border-white/5 relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
-                <div className="text-3xl font-extrabold font-mono text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors mb-4">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-zinc-200 relative overflow-hidden group hover:border-zinc-300 transition-colors shadow-sm">
+                <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-red-600 transition-colors mb-4">
                   02
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Pay 10% Token</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-zinc-950 mb-2">Pay 10% Token</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Lock your template with just a 10% upfront deposit held in escrow. Zero full payment until you inspect the live site.
                 </p>
               </div>
 
               {/* Step 3 */}
-              <div className="bg-[#0f172a] rounded-2xl p-6 sm:p-7 border border-white/5 relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
-                <div className="text-3xl font-extrabold font-mono text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors mb-4">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-zinc-200 relative overflow-hidden group hover:border-zinc-300 transition-colors shadow-sm">
+                <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-blue-600 transition-colors mb-4">
                   03
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Live on Your Domain</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-zinc-950 mb-2">Live on Your Domain</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Our team connects your domain, configures hosting, and hands over your live site in 48 hours.
                 </p>
               </div>
@@ -192,44 +191,44 @@ export default function HomePage() {
         />
 
         {/* SECTION 5: WHY 10% TOKEN MODEL (TRUST & GUARANTEE) */}
-        <section id="why-us" className="py-16 sm:py-24 bg-[#080c14] border-t border-white/5">
+        <section id="why-us" className="py-16 sm:py-24 bg-zinc-50 border-t border-zinc-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-blue-600 font-semibold">
                 Risk-Free Commitment
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950">
                 Why Founders Choose the 10% Token Model
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#0f172a] p-6 rounded-2xl border border-white/5 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+              <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-3 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 text-red-600 flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-white">Zero Risk Guarantee</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-base font-bold text-zinc-950">Zero Risk Guarantee</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   If we don&apos;t launch your site within 48 hours, 100% of your token deposit is refunded instantly. Zero questions asked.
                 </p>
               </div>
 
-              <div className="bg-[#0f172a] p-6 rounded-2xl border border-white/5 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+              <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-3 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
                   <Globe className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-white">Full Domain & SSL Setup</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-base font-bold text-zinc-950">Full Domain & SSL Setup</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   No technical headache. We configure DNS, Cloudflare SSL, edge caching, and mobile responsiveness for you.
                 </p>
               </div>
 
-              <div className="bg-[#0f172a] p-6 rounded-2xl border border-white/5 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center">
+              <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-3 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                   <Code2 className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-white">Post-Launch Handover</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-base font-bold text-zinc-950">Post-Launch Handover</h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   100% source code ownership and 30-day technical support included. Complete control over your digital asset.
                 </p>
               </div>
@@ -238,13 +237,13 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 6: FAQ ACCORDION (TOP 4 QUESTIONS) */}
-        <section id="faq" className="py-16 sm:py-24">
+        <section id="faq" className="py-16 sm:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 space-y-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-blue-600 font-semibold">
                 Clear Answers
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -255,23 +254,23 @@ export default function HomePage() {
                 return (
                   <div
                     key={faq.q}
-                    className="bg-[#0f172a] border border-white/5 rounded-2xl overflow-hidden transition-colors"
+                    className="bg-zinc-50 border border-zinc-200 rounded-2xl overflow-hidden transition-colors"
                   >
                     <button
                       onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                       className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                     >
-                      <span className="text-sm sm:text-base font-semibold text-white">
+                      <span className="text-sm sm:text-base font-semibold text-zinc-950">
                         {faq.q}
                       </span>
                       <ChevronDown
-                        className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                          isOpen ? 'rotate-180 text-indigo-400' : ''
+                        className={`w-4 h-4 text-zinc-500 shrink-0 transition-transform duration-200 ${
+                          isOpen ? 'rotate-180 text-blue-600' : ''
                         }`}
                       />
                     </button>
                     {isOpen && (
-                      <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                      <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-200 pt-3">
                         {faq.a}
                       </div>
                     )}

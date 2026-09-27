@@ -42,7 +42,7 @@ export const TEMPLATES: Template[] = [
   {
     id: 'apexstudio',
     title: 'ApexStudio',
-    tagline: 'Sleek dark-mode digital agency portal with interactive case studies and calendar booking.',
+    tagline: 'Sleek modern digital agency portal with interactive case studies and calendar booking.',
     category: 'Agency',
     fullPrice: 11999,
     tokenPrice: 1199,
