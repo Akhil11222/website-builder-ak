@@ -31,7 +31,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#060a12',
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -40,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}>
-      <body className="bg-[#060a12] text-slate-100 font-sans antialiased overflow-x-hidden min-h-screen selection:bg-blue-600 selection:text-white">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
+      <body className="bg-[#f8fafc] text-slate-900 font-sans antialiased overflow-x-hidden min-h-screen selection:bg-blue-600 selection:text-white">
         {children}
       </body>
     </html>
