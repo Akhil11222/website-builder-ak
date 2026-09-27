@@ -135,8 +135,8 @@ export default function TemplateSlider({ onSelectPreview, onSelectBook }: Templa
                   <span className="text-[11px] font-mono text-blue-600 font-semibold uppercase tracking-wider">
                     {template.category}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-red-600">
-                    <Clock className="w-3 h-3 text-red-600" />
+                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-zinc-600">
+                    <Clock className="w-3 h-3 text-blue-600" />
                     <span>Ready in {template.readyInHours}h</span>
                   </span>
                 </div>
@@ -182,10 +182,10 @@ export default function TemplateSlider({ onSelectPreview, onSelectBook }: Templa
                     </div>
                   </div>
                   
-                  {/* Highlighted 10% Token Pill (5% RED URGENCY ACCENT - #dc2626) */}
+                  {/* Highlighted 10% Token Pill (Sleek Blue Escrow) */}
                   <div className="text-right">
-                    <span className="text-[10px] text-red-600 uppercase tracking-wider font-mono font-bold">10% Token Escrow</span>
-                    <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-red-50 text-red-600 border border-red-200 text-xs sm:text-sm font-mono font-bold">
+                    <span className="text-[10px] text-blue-700 uppercase tracking-wider font-mono font-bold">10% Token Escrow</span>
+                    <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 text-xs sm:text-sm font-mono font-bold">
                       Pay ₹{template.tokenPrice.toLocaleString('en-IN')}
                     </div>
                   </div>

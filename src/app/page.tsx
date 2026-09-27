@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { 
-  Zap, 
   ArrowRight, 
   ShieldCheck, 
   Clock, 
@@ -12,6 +11,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import HeroAmbientGlow from '@/components/HeroAmbientGlow';
+import HeroShowcaseFrame from '@/components/HeroShowcaseFrame';
 import TemplateSlider from '@/components/TemplateSlider';
 import PreviewBookingModal from '@/components/PreviewBookingModal';
 import Footer from '@/components/Footer';
@@ -68,23 +68,23 @@ export default function HomePage() {
 
   return (
     <div className="relative min-h-screen bg-white text-zinc-950 overflow-x-hidden selection:bg-blue-600 selection:text-white">
-      {/* SECTION 1: MODERN GLASSMORPHISM HEADER (60% White / 30% Black Structure) */}
+      {/* SECTION 1: FLOATING GLASSMORPHISM PILL HEADER */}
       <Header onBookClick={handleHeaderBook} />
 
       <main className="relative">
-        {/* SECTION 2: HERO SECTION WITH AMBIENT GLOW */}
-        <section className="relative pt-20 pb-20 sm:pt-28 sm:pb-28 overflow-hidden bg-white">
+        {/* SECTION 2: HERO SECTION WITH AURORA GLOW & SHOWCASE FRAME */}
+        <section className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 overflow-hidden bg-white">
           <HeroAmbientGlow />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            {/* Top Escrow Badge (5% RED URGENCY ACCENT - #dc2626) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
-              <Zap className="w-4 h-4 text-red-600" />
-              <span>48-Hour Live Deployment • 10% Escrow Token Model</span>
+            {/* Top Dark Badge (NO RED: Clean Zinc-900 Pill + Glowing Blue Dot) */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 text-zinc-100 text-xs font-medium mb-6 border border-zinc-800 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+              <span>48-Hour Live Deployment Guarantee &bull; 10% Escrow Model</span>
             </div>
 
-            {/* Main Headline (30% Black Primary Typography + 5% Blue Highlight) */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-950 max-w-4xl mx-auto leading-tight sm:leading-tight">
+            {/* Main Headline (Comfortable, Bold & Crisp) */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-950 max-w-4xl mx-auto leading-tight sm:leading-tight">
               Ready-Made Websites, Deployed to Your Domain in{' '}
               <span className="text-blue-600">
                 48 Hours.
@@ -92,43 +92,47 @@ export default function HomePage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-sm sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-sm sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed font-normal">
               Browse high-converting production websites. Reserve instantly with just a 10% token deposit. We handle your domain, hosting, and launch.
             </p>
 
-            {/* Dual CTAs (30% Solid Black CTA + Clean White Outline) */}
+            {/* Dual CTAs (Luxury Rounded-XL Buttons) */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
               <button
                 onClick={() => scrollTo('templates')}
-                className="w-full sm:w-auto min-h-[46px] px-7 py-3 rounded-full text-sm font-semibold text-white bg-black hover:bg-zinc-800 shadow-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98] cursor-pointer"
+                className="w-full sm:w-auto min-h-[46px] px-6 py-3.5 rounded-xl font-medium text-white bg-zinc-950 hover:bg-zinc-900 shadow-md shadow-zinc-950/15 flex items-center justify-center gap-2 transition-all active:scale-[0.98] cursor-pointer"
               >
-                <span>Explore Templates</span>
+                <span>Explore 6 Websites</span>
                 <ArrowRight className="w-4 h-4 text-blue-400" />
               </button>
 
               <button
                 onClick={() => scrollTo('how-it-works')}
-                className="w-full sm:w-auto min-h-[46px] px-6 py-3 rounded-full text-sm font-semibold text-zinc-800 hover:text-black bg-white hover:bg-zinc-50 border border-zinc-200 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto min-h-[46px] px-6 py-3.5 rounded-xl font-medium text-zinc-800 hover:text-black bg-white hover:bg-zinc-50 border border-zinc-200 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
-                <span>How 10% Token Works</span>
+                <span>How 10% Booking Works</span>
               </button>
             </div>
 
-            {/* Live Stats Pill Row */}
-            <div className="mt-12 pt-8 border-t border-zinc-100 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-zinc-600">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-red-600" />
-                <span className="text-zinc-900 font-semibold">48h SLA Handover</span>
-              </div>
+            {/* Live Stats Pill Row (All Blue/Charcoal Icons, ZERO Red) */}
+            <div className="mt-10 pt-6 border-t border-zinc-100 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-zinc-600">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-blue-600" />
                 <span className="text-zinc-900 font-semibold">100% Escrow Protected</span>
               </div>
               <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-blue-600" />
+                <span className="text-zinc-900 font-semibold">48h SLA Handover</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-blue-600" />
-                <span className="text-zinc-900 font-semibold">Free SSL & Domain Setup</span>
+                <span className="text-zinc-900 font-semibold">Free Custom Domain &amp; SSL Setup</span>
               </div>
             </div>
+
+            {/* HERO VISUAL CENTERPIECE (Interactive Live Showcase Frame) */}
+            <HeroShowcaseFrame />
+
           </div>
         </section>
 
@@ -153,7 +157,7 @@ export default function HomePage() {
                 <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-blue-600 transition-colors mb-4">
                   01
                 </div>
-                <h3 className="text-lg font-bold text-zinc-950 mb-2">Browse & Select</h3>
+                <h3 className="text-lg font-bold text-zinc-950 mb-2">Browse &amp; Select</h3>
                 <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Pick a pre-built, production-tested website tailored to your business from our curated catalog.
                 </p>
@@ -161,7 +165,7 @@ export default function HomePage() {
 
               {/* Step 2 */}
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-zinc-200 relative overflow-hidden group hover:border-zinc-300 transition-colors shadow-sm">
-                <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-red-600 transition-colors mb-4">
+                <div className="text-3xl font-extrabold font-mono text-zinc-300 group-hover:text-blue-600 transition-colors mb-4">
                   02
                 </div>
                 <h3 className="text-lg font-bold text-zinc-950 mb-2">Pay 10% Token</h3>
@@ -204,7 +208,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-3 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 text-red-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-zinc-950">Zero Risk Guarantee</h3>
@@ -217,7 +221,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
                   <Globe className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-zinc-950">Full Domain & SSL Setup</h3>
+                <h3 className="text-base font-bold text-zinc-950">Full Domain &amp; SSL Setup</h3>
                 <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   No technical headache. We configure DNS, Cloudflare SSL, edge caching, and mobile responsiveness for you.
                 </p>

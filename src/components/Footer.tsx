@@ -33,7 +33,7 @@ export default function Footer() {
                 <span>100% Escrow Protected</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-red-500" />
+                <Clock className="w-3.5 h-3.5 text-blue-500" />
                 <span>48h SLA Handover</span>
               </span>
             </div>

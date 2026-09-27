@@ -15,20 +15,38 @@ export default function HeroAmbientGlow() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-      {/* Subtle Interactive Blue Light (5% Blue accent reflection on clean white canvas) */}
-      <div
-        className="hidden md:block absolute w-[550px] h-[550px] rounded-full transition-transform duration-300 ease-out"
+    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none">
+      {/* 1. Interactive Aurora Glow (Soft, elegant top radial aura) */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none"
         style={{
-          transform: `translate3d(${mousePos.x - 275}px, ${mousePos.y - 275}px, 0)`,
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 45%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37, 99, 235, 0.12), rgba(255, 255, 255, 0))'
+        }}
+      />
+
+      {/* 2. Subtle Light Mesh / Architectural Micro-Dots (Opacity 0.07, smoothly fades toward bottom) */}
+      <div 
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(#09090b 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+          maskImage: 'radial-gradient(ellipse 80% 65% at 50% 25%, black 40%, transparent 95%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 65% at 50% 25%, black 40%, transparent 95%)'
+        }}
+      />
+
+      {/* 3. Cursor Spotlight Effect (Zero-lag gentle blue ambient reflection) */}
+      <div
+        className="hidden md:block absolute w-[600px] h-[600px] rounded-full transition-transform duration-200 ease-out pointer-events-none"
+        style={{
+          transform: `translate3d(${mousePos.x - 300}px, ${mousePos.y - 300}px, 0)`,
+          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 70%)',
           willChange: 'transform',
         }}
       />
 
-      {/* Soft Clean Radial Gradients on White */}
-      <div className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[350px] sm:h-[450px] rounded-full bg-blue-600/[0.03] blur-3xl" />
-      <div className="absolute top-[25%] right-[5%] w-[400px] h-[400px] rounded-full bg-blue-600/[0.02] blur-3xl" />
+      {/* Soft secondary atmospheric diffusion */}
+      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-gradient-to-b from-blue-500/[0.04] to-transparent blur-3xl rounded-full" />
     </div>
   );
 }

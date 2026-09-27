@@ -71,8 +71,8 @@ export default function CodeMockup({ type, compact = false }: CodeMockupProps) {
                 </div>
               </div>
               <div className="flex items-center justify-between text-[10px] text-zinc-600 pt-1">
-                <span className="flex items-center gap-1 text-red-600 font-medium">
-                  <CheckCircle2 className="w-3 h-3 text-red-600" /> Only 2 Left (Dispatches 24h)
+                <span className="flex items-center gap-1 text-blue-600 font-medium">
+                  <CheckCircle2 className="w-3 h-3 text-blue-600" /> Only 2 Left (Dispatches 24h)
                 </span>
                 <span className="text-zinc-500 font-medium">Free Delivery</span>
               </div>
@@ -140,7 +140,7 @@ export default function CodeMockup({ type, compact = false }: CodeMockupProps) {
                 <Utensils className="w-3.5 h-3.5 text-zinc-900" />
                 <span>VELVET<span className="text-zinc-500">DINE</span></span>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[9px] font-mono border border-red-200 font-semibold">
+              <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[9px] font-mono border border-blue-200 font-semibold">
                 Slots Open
               </span>
             </div>
@@ -155,7 +155,7 @@ export default function CodeMockup({ type, compact = false }: CodeMockupProps) {
               </p>
               <div className="flex items-center gap-2 pt-1 text-[9px] text-zinc-600">
                 <span className="flex items-center gap-1">
-                  <Clock className="w-2.5 h-2.5 text-red-600" /> 19:30 & 21:30
+                  <Clock className="w-2.5 h-2.5 text-blue-600" /> 19:30 & 21:30
                 </span>
                 <span className="flex items-center gap-1">
                   <Star className="w-2.5 h-2.5 text-zinc-400 fill-zinc-400" /> Michelin Guide &apos;24
@@ -181,7 +181,7 @@ export default function CodeMockup({ type, compact = false }: CodeMockupProps) {
                 <Building2 className="w-3.5 h-3.5 text-blue-600" />
                 <span>PRIME<span className="text-zinc-600">ESTATES</span></span>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[9px] font-mono border border-red-200 font-semibold">
+              <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[9px] font-mono border border-blue-200 font-semibold">
                 Exclusive
               </span>
             </div>
@@ -220,7 +220,7 @@ export default function CodeMockup({ type, compact = false }: CodeMockupProps) {
                 <Activity className="w-3.5 h-3.5 text-blue-600" />
                 <span>PULSE<span className="text-zinc-600">CARE</span></span>
               </div>
-              <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[9px] font-mono border border-red-200 font-semibold">
+              <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[9px] font-mono border border-blue-200 font-semibold">
                 Slot: 16:30 Today
               </span>
             </div>

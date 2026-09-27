@@ -176,7 +176,7 @@ export default function PreviewBookingModal({
                   <span>Full Price: </span>
                   <span className="text-zinc-950 font-bold font-mono">₹{template.fullPrice.toLocaleString('en-IN')}</span>
                   <span className="mx-2">•</span>
-                  <span className="text-red-600 font-bold font-mono">
+                  <span className="text-blue-700 font-bold font-mono">
                     Reserve with 10% (₹{template.tokenPrice.toLocaleString('en-IN')})
                   </span>
                 </div>
@@ -207,7 +207,7 @@ export default function PreviewBookingModal({
                   <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200 text-xs text-left space-y-2">
                     <div className="flex justify-between">
                       <span className="text-zinc-600">Token Paid:</span>
-                      <span className="text-red-600 font-bold font-mono">₹{template.tokenPrice.toLocaleString('en-IN')} (Held in Escrow)</span>
+                      <span className="text-blue-600 font-bold font-mono">₹{template.tokenPrice.toLocaleString('en-IN')} (Held in Escrow)</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-zinc-600">90% Remaining:</span>
@@ -238,12 +238,12 @@ export default function PreviewBookingModal({
                       <span className="text-[10px] text-zinc-500">Fixed turn-key cost</span>
                     </div>
 
-                    <div className="bg-red-50 p-3.5 rounded-xl border border-red-200 space-y-1">
-                      <span className="text-[10px] font-mono text-red-600 uppercase font-bold">10% Token Due Now</span>
-                      <div className="text-lg font-bold text-red-600 font-mono">
+                    <div className="bg-blue-50 p-3.5 rounded-xl border border-blue-200 space-y-1">
+                      <span className="text-[10px] font-mono text-blue-700 uppercase font-bold">10% Token Due Now</span>
+                      <div className="text-lg font-bold text-blue-700 font-mono">
                         ₹{template.tokenPrice.toLocaleString('en-IN')}
                       </div>
-                      <span className="text-[10px] text-red-600/80 font-medium">Secured in escrow</span>
+                      <span className="text-[10px] text-blue-600/80 font-medium">Secured in escrow</span>
                     </div>
 
                     <div className="bg-zinc-50 p-3.5 rounded-xl border border-zinc-200 space-y-1">
