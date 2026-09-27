@@ -49,10 +49,10 @@ function MarketplaceModals() {
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
     <MarketplaceProvider>
-      <div className="relative min-h-screen flex flex-col bg-[#fafafa] text-zinc-950 antialiased selection:bg-zinc-900 selection:text-white">
+      <div className="relative min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 antialiased overflow-x-hidden">
         <SpotlightBackground />
         <Header />
-        <main className="flex-1 w-full">
+        <main className="flex-1 w-full z-10">
           {children}
         </main>
         <Footer />

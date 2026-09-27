@@ -17,45 +17,45 @@ export default function BottomDiscountBanner() {
   return (
     <div className="w-full">
       {/* 1. Newsletter Subscription Bar Section */}
-      <section className="py-12 bg-zinc-900 border-t border-zinc-800 text-zinc-100">
+      <section className="py-14 sm:py-16 bg-slate-900 border-t border-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center md:text-left">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
-                STAY AHEAD OF CURATED DROPS
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="space-y-1.5 text-center lg:text-left max-w-xl">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+                CURATED WEEKLY DROPS
               </span>
-              <h3 className="text-lg sm:text-xl font-bold text-white">
-                Get New Production Website Releases Every Friday
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
+                Get Fresh Production Websites Every Friday
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-400 max-w-lg">
-                Receive newly engineered Next.js 16 templates, architectural tear-downs, and priority 48-hour deployment slots.
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Join 4,200+ founders receiving newly architected Next.js templates, architectural teardowns, and priority 48-hour launch slots.
               </p>
             </div>
 
-            <div className="w-full md:w-auto">
+            <div className="w-full lg:w-auto">
               {newsletterSubscribed ? (
-                <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800 border border-zinc-700 text-xs text-zinc-200">
-                  <Check className="w-4 h-4 text-white" />
-                  <span>Subscribed! You will receive our next curated template drop.</span>
+                <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-slate-200">
+                  <Check className="w-4 h-4 text-indigo-400" />
+                  <span>Subscribed! You will receive our next curated website drop.</span>
                 </div>
               ) : (
-                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row items-center gap-2 w-full max-w-md">
-                  <div className="relative w-full sm:w-72">
-                    <Mail className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row items-center gap-2.5 w-full max-w-md">
+                  <div className="relative w-full sm:w-80">
+                    <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input 
                       type="email"
                       required
-                      placeholder="founder@company.com"
+                      placeholder="founder@yourcompany.com"
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2.5 bg-zinc-950 border border-zinc-700 rounded-lg text-xs text-white placeholder:text-zinc-500 focus:outline-hidden focus:border-zinc-400 transition-colors"
+                      className="w-full pl-10 pr-3.5 py-3 bg-slate-800/90 border border-slate-700 rounded-xl text-xs sm:text-sm text-white placeholder:text-slate-400 focus:outline-hidden focus:border-indigo-400 transition-all min-h-[44px]"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-semibold text-xs transition-colors shrink-0 shadow-sm"
+                    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-xs sm:text-sm transition-all shrink-0 shadow-md shadow-indigo-500/20 min-h-[44px]"
                   >
-                    Subscribe
+                    Subscribe Free
                   </button>
                 </form>
               )}
@@ -68,19 +68,19 @@ export default function BottomDiscountBanner() {
       {!isBannerDismissed && (
         <aside 
           aria-label="Promotional Offer"
-          className="fixed bottom-0 inset-x-0 z-40 bg-zinc-950/95 text-white border-t border-zinc-800 px-4 py-3 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-2 duration-300"
+          className="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 text-white border-t border-slate-800 px-4 py-3 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-2 duration-300"
         >
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-3">
-              <span className="p-1.5 rounded-md bg-zinc-900 border border-zinc-700 text-zinc-300 hidden sm:inline-flex">
+              <span className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 hidden sm:inline-flex">
                 <Tag className="w-3.5 h-3.5" />
               </span>
               <div>
                 <span className="font-semibold text-white">
-                  Limited Deployment Promo: Save 10% on your token booking
+                  Launch Special: Save 10% on your token booking
                 </span>
-                <span className="text-zinc-400 ml-1.5 hidden md:inline">
-                  Use coupon code <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-200 font-mono text-[11px] border border-zinc-800">LAUNCH10</code> at reservation.
+                <span className="text-slate-400 ml-1.5 hidden md:inline">
+                  Use coupon code <code className="bg-slate-800 px-2 py-0.5 rounded text-indigo-300 font-mono text-[11px] border border-slate-700 font-bold">LAUNCH10</code> at checkout.
                 </span>
               </div>
             </div>
@@ -88,17 +88,17 @@ export default function BottomDiscountBanner() {
             <div className="flex items-center gap-3 shrink-0">
               <a 
                 href="#catalog"
-                className="px-3 py-1.5 rounded bg-white hover:bg-zinc-200 text-zinc-950 font-bold text-[11px] flex items-center gap-1 transition-colors"
+                className="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1 transition-all shadow-xs"
               >
-                <span>Claim Offer</span>
+                <span>Browse Designs</span>
                 <ArrowRight className="w-3 h-3" />
               </a>
 
               <button
                 type="button"
                 onClick={() => setIsBannerDismissed(true)}
-                className="p-1 text-zinc-400 hover:text-white rounded hover:bg-zinc-900 transition-colors"
-                aria-label="Dismiss discount banner"
+                className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+                aria-label="Dismiss banner"
               >
                 <X className="w-4 h-4" />
               </button>

@@ -10,7 +10,6 @@ export default function ScrollToTop() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      // Show only when scrolled past 300px
       if (scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -21,8 +20,7 @@ export default function ScrollToTop() {
       const footerElement = document.getElementById('main-footer');
       if (footerElement) {
         const footerRect = footerElement.getBoundingClientRect();
-        // If the footer top is within 150px of the viewport bottom or above it
-        if (footerRect.top <= window.innerHeight + 20) {
+        if (footerRect.top <= window.innerHeight + 40) {
           setIsFooterNear(true);
         } else {
           setIsFooterNear(false);
@@ -56,10 +54,10 @@ export default function ScrollToTop() {
       <button
         type="button"
         onClick={scrollToTop}
-        aria-label="Scroll back to top"
-        className="w-11 h-11 rounded-full bg-zinc-950 text-white border border-zinc-700 shadow-xl hover:bg-zinc-800 active:scale-90 flex items-center justify-center transition-all duration-200 group focus:outline-hidden focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-950"
+        aria-label="Scroll to top"
+        className="w-12 h-12 rounded-full bg-slate-900 text-white hover:bg-indigo-600 active:scale-95 shadow-lg shadow-slate-900/20 border border-slate-700/50 flex items-center justify-center transition-all duration-200 group focus:outline-hidden"
       >
-        <ArrowUp className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5" />
+        <ArrowUp className="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
       </button>
     </div>
   );
