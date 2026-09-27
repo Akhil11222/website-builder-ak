@@ -2,13 +2,13 @@ export interface Template {
   id: string;
   title: string;
   tagline: string;
-  category: 'E-Commerce' | 'Agency' | 'Restaurant' | 'Real Estate' | 'Healthcare' | 'Creative';
+  category: 'E-Commerce' | 'Corporate Agency' | 'Restaurant & Cafe' | 'Real Estate' | 'Healthcare';
   fullPrice: number;
   tokenPrice: number;
   readyInHours: number;
   techStack: string[];
   features: string[];
-  mockupType: 'ecommerce' | 'agency' | 'restaurant' | 'realestate' | 'healthcare' | 'creative';
+  mockupType: 'ecommerce' | 'agency' | 'restaurant' | 'realestate' | 'healthcare' | 'saas';
   rating: number;
   liveReviews: number;
 }
@@ -16,8 +16,8 @@ export interface Template {
 export const CATEGORIES = [
   'All',
   'E-Commerce',
-  'Agency',
-  'Restaurant',
+  'Corporate Agency',
+  'Restaurant & Cafe',
   'Real Estate',
   'Healthcare'
 ] as const;
@@ -28,7 +28,7 @@ export const TEMPLATES: Template[] = [
   {
     id: 'novastore',
     title: 'NovaStore',
-    tagline: 'High-conversion headless storefront with dynamic cart and instant UPI checkout.',
+    tagline: 'High-conversion headless storefront with dynamic cart, inventory sync, and instant UPI checkout.',
     category: 'E-Commerce',
     fullPrice: 14999,
     tokenPrice: 1499,
@@ -42,8 +42,8 @@ export const TEMPLATES: Template[] = [
   {
     id: 'apexstudio',
     title: 'ApexStudio',
-    tagline: 'Sleek modern digital agency portal with interactive case studies and calendar booking.',
-    category: 'Agency',
+    tagline: 'Enterprise digital agency portal with interactive case studies, lead scoring, and automated calendar sync.',
+    category: 'Corporate Agency',
     fullPrice: 11999,
     tokenPrice: 1199,
     readyInHours: 48,
@@ -56,8 +56,8 @@ export const TEMPLATES: Template[] = [
   {
     id: 'velvetdine',
     title: 'VelvetDine',
-    tagline: 'Warm culinary experience with interactive QR digital menus and table reservations.',
-    category: 'Restaurant',
+    tagline: 'Hospitality & culinary platform with interactive QR smart menus, OpenTable sync, and WhatsApp orders.',
+    category: 'Restaurant & Cafe',
     fullPrice: 9999,
     tokenPrice: 999,
     readyInHours: 48,
@@ -70,7 +70,7 @@ export const TEMPLATES: Template[] = [
   {
     id: 'primeestates',
     title: 'PrimeEstates',
-    tagline: 'Luxury real estate showcase with 3D floor plan explorer and mortgage calculator.',
+    tagline: 'Luxury real estate showcase with 3D floor plan explorer, map routing, and instant mortgage calculator.',
     category: 'Real Estate',
     fullPrice: 16999,
     tokenPrice: 1699,
@@ -84,7 +84,7 @@ export const TEMPLATES: Template[] = [
   {
     id: 'pulsecare',
     title: 'PulseCare',
-    tagline: 'HIPAA-conscious clinic portal with instant doctor appointment scheduling.',
+    tagline: 'HIPAA-conscious clinical practice portal with doctor scheduling, telemedicine intake, and SMS reminders.',
     category: 'Healthcare',
     fullPrice: 12999,
     tokenPrice: 1299,
@@ -96,17 +96,17 @@ export const TEMPLATES: Template[] = [
     liveReviews: 31
   },
   {
-    id: 'minimalfolio',
-    title: 'MinimalFolio',
-    tagline: 'Editorial grid portfolio with silky smooth transitions for creators & architects.',
-    category: 'Agency', // filterable under All / Agency
-    fullPrice: 8999,
-    tokenPrice: 899,
+    id: 'nexussaas',
+    title: 'NexusSaaS',
+    tagline: 'B2B enterprise SaaS platform with interactive pricing tiers, feature comparison matrix, and product tour.',
+    category: 'Corporate Agency',
+    fullPrice: 13999,
+    tokenPrice: 1399,
     readyInHours: 48,
     techStack: ['Next.js 15', 'Tailwind CSS', 'Subtle Motion', 'Fast CDN'],
-    features: ['High-DPI Project Carousels', 'Client Testimonial Feed', 'Direct Inbound Inquiry'],
-    mockupType: 'creative',
-    rating: 4.91,
-    liveReviews: 52
+    features: ['Live Feature Metrics', 'Interactive Pricing Calculator', 'Product Tour Showcase'],
+    mockupType: 'saas',
+    rating: 4.95,
+    liveReviews: 42
   }
 ];
