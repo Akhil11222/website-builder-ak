@@ -5,32 +5,23 @@ import { ArrowUp } from 'lucide-react';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isFooterNear, setIsFooterNear] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-
-      // Check distance from bottom or footer
-      const footerElement = document.getElementById('main-footer');
-      if (footerElement) {
-        const footerRect = footerElement.getBoundingClientRect();
-        if (footerRect.top <= window.innerHeight + 40) {
-          setIsFooterNear(true);
-        } else {
-          setIsFooterNear(false);
-        }
-      }
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Check if user is scrolled past 350px
+      const pastThreshold = scrollY > 350;
+      
+      // Auto-hide when reaching near the footer (within 200px of bottom)
+      const nearBottom = scrollY + windowHeight >= documentHeight - 150;
+      
+      setIsVisible(pastThreshold && !nearBottom);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -41,24 +32,15 @@ export default function ScrollToTop() {
     });
   };
 
-  const shouldShow = isVisible && !isFooterNear;
+  if (!isVisible) return null;
 
   return (
-    <div 
-      className={`fixed bottom-6 right-6 z-40 transition-all duration-300 transform ${
-        shouldShow 
-          ? 'opacity-100 translate-y-0 pointer-events-auto' 
-          : 'opacity-0 translate-y-4 pointer-events-none'
-      }`}
+    <button
+      onClick={scrollToTop}
+      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0f172a]/90 hover:bg-indigo-600 border border-white/10 hover:border-indigo-500/50 text-slate-300 hover:text-white shadow-xl shadow-black/50 backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+      aria-label="Scroll to top"
     >
-      <button
-        type="button"
-        onClick={scrollToTop}
-        aria-label="Scroll to top"
-        className="w-12 h-12 rounded-full bg-slate-900 text-white hover:bg-indigo-600 active:scale-95 shadow-lg shadow-slate-900/20 border border-slate-700/50 flex items-center justify-center transition-all duration-200 group focus:outline-hidden"
-      >
-        <ArrowUp className="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
-      </button>
-    </div>
+      <ArrowUp className="w-5 h-5" />
+    </button>
   );
 }
